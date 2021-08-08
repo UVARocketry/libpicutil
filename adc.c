@@ -5,9 +5,10 @@
 void adc_init() {
     FVRCONbits.EN = 1; //enable Fixed Voltage Reference
     FVRCONbits.ADFVR = 0b11; //4.096V reference for ADC Vref+
-    while(!FVRCONbits.RDY); //wait for FVR to stabilize
+    while(!FVRCONbits.RDY)
+        ; //wait for FVR to stabilize
    
-        ADREFbits.PREF = 0b11; //use internal fixed voltage reference (FVR)
+    ADREFbits.PREF = 0b11; //use internal fixed voltage reference (FVR)
     
     ADCON0bits.FM = 1; //right-justify ADC result in registers
 
