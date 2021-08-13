@@ -11,7 +11,7 @@ void leds_init() {
     //PowerPyroRCU: used to show power switch status
     //
     ANSELC2 = 0;
-    TRISC3 = 0;
+    TRISC2 = 0;
     
     //flash both LEDs on startup
     for(uint8_t x = 0; x < 3; x++) {
