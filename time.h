@@ -11,6 +11,8 @@
 #include <stdint.h>
 #include <xc.h>
 
+#define _XTAL_FREQ 64000000UL //needed for delays to work, but not much else
+
 void time_init(void);
 uint16_t time_millis(void);
 uint16_t time_secs(void);

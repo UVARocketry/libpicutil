@@ -2,8 +2,8 @@
 #include <xc.h>
 
 volatile uint16_t ms; //~65s before rollover
-volatile uint16_t last_second_ms;
-volatile uint16_t secs;
+volatile uint16_t last_second_ms; 
+volatile uint16_t secs; //~18hr before rollover
 
 void time_init() {
     //configure 8-bit Timer0 to increment every 4us
@@ -25,7 +25,7 @@ uint16_t time_millis() {
 }
 
 uint16_t time_secs() {
-    PIE3bits.TMR0IE = 0; //stop interrupts while accessing ms value 
+    PIE3bits.TMR0IE = 0; //stop interrupts while accessing seconds value 
     //(it's multiple bytes, so operations take several clock cycles and irq could occur)
     uint16_t result = secs;
     PIE3bits.TMR0IE = 1; //restart interrupts
