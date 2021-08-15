@@ -14,15 +14,9 @@ void leds_init() {
     TRISC2 = 0;
     
     //flash both LEDs on startup
-    for(uint8_t x = 0; x < 3; x++) {
-        LATC3 = 1;
-        LATC2 = 0;
-        __delay_ms(100);
-        LATC3=0;
-        LATC2 = 1;
-        __delay_ms(100);
-    }
-    LATC2 = 0; //off at end
+    LATC2 = LATC3 = 1;
+    __delay_ms(100);
+    LATC2 = LATC3 = 0; //off at end
 }
 
 void leds_connected(uint8_t connected) {
