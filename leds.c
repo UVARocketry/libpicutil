@@ -15,7 +15,7 @@ void leds_init() {
     
     //flash both LEDs on startup
     LATC2 = LATC3 = 1;
-    __delay_ms(100);
+    __delay_ms(1000);
     LATC2 = LATC3 = 0; //off at end
 }
 
