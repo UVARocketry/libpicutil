@@ -14,7 +14,7 @@ void leds_init()
     LATC3 = 0; //off at end
 }
 
-void leds_connected(uint8_t connected)
+void leds_connected(uint8_t connected) //
 {
     if (connected)
     {
